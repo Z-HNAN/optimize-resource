@@ -1,0 +1,14 @@
+# .github
+.github
+
+# .git
+.git
+
+# node_modules
+node_modules
+
+# image temp
+/temp
+
+# iamge thumb
+/public/thumb
