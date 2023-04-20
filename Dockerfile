@@ -4,7 +4,7 @@ FROM node:16-buster-slim
 
 # use /bin/bash avoid issue
 # https://github.com/imagemin/gifsicle-bin/issues/124
-RUN ln -fs /bin/bash /bin/sh
+# RUN ln -fs /bin/bash /bin/sh
 
 # 创建一个工作目录
 WORKDIR /app
@@ -16,7 +16,8 @@ VOLUME /photo
 COPY . .
 
 # 安装 pnmp 等工具
-RUN npm install
+RUN npm install pnpm -g \
+  && pnpm install
 
 # 暴露端口
 EXPOSE 3000
