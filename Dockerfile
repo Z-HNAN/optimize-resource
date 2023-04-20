@@ -2,6 +2,10 @@
 FROM node:16-buster-slim
 # FROM node:16-alpine
 
+# use /bin/bash avoid issue
+# https://github.com/imagemin/gifsicle-bin/issues/124
+SHELL ["/bin/bash", "-c"]
+
 # 创建一个工作目录
 WORKDIR /app
 
