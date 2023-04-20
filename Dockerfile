@@ -4,7 +4,7 @@ FROM node:16-buster-slim
 
 # use /bin/bash avoid issue
 # https://github.com/imagemin/gifsicle-bin/issues/124
-SHELL ["/bin/bash", "-c"]
+RUN ln -fs /bin/bash /bin/sh
 
 # 创建一个工作目录
 WORKDIR /app
