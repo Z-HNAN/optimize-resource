@@ -1,0 +1,71 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.app-breadcrumb {
+  flex: 0;
+}
+.app-tools {
+  flex: 0;
+}
+.app-output {
+  flex: 1;
+  overflow: auto;
+}
+
+
+.app-breadcrumb {
+  font-size: 0;
+}
+.app-tools {
+  font-size: 0;
+  margin-top: .2rem;
+}
+.app-tools > button:not(:first-of-type) {
+  margin-left: .1rem;
+}
+
+.app-output {
+  margin-top: .1rem;
+}
+
+.app-output .output-empty {
+  font-size: 0.32rem;
+}
+
+.app-output .output-log {
+  width: 100%;
+  padding: .2rem 0;
+  border: 1px solid #eee;
+}
+.output-log .arco-collapse-header {
+  padding-top: 0;
+  padding-bottom: 0.1rem;
+  height: initial;
+}
+
+.app-output .output-image {
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.32rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.output-image .output-display {
+  height: 80%;
+}
+
+.output-display .display-name {
+  width: 4rem;
+  font-size: 0.32rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.output-display .display-tag {
+  margin: .1rem .1rem 0 0;
+}
