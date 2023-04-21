@@ -15,15 +15,14 @@ VOLUME /photo
 # 复制项目文件到工作目录
 COPY . .
 
-RUN echo "zhnan/optimize-resource" \
-
+RUN echo "zhnan/optimize-resource" && \
   # chmod
-  && chmod +751 vendor/linux-amd/jpeg-recompress \
-  && chmod +751 vendor/linux-amd/pngquant \
-  && chmod +751 vendor/linux-arm/jpeg-recompress \
-  && chmod +751 vendor/linux-arm/pngquant \
+  chmod +751 vendor/linux-amd/jpeg-recompress && \
+  chmod +751 vendor/linux-amd/pngquant && \
+  chmod +751 vendor/linux-arm/jpeg-recompress && \
+  chmod +751 vendor/linux-arm/pngquant && \
   # install
-  && npm install
+  npm install
 
 # 暴露端口
 EXPOSE 3000
