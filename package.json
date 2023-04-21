@@ -4,12 +4,17 @@
   "type": "module",
   "description": "",
   "scripts": {
-    "start": "node index.js"
+    "preinstall": "node preinstall.js",
+    "start": "cross-env NODE_ENV=development node index.js",
+    "build": "cross-env NODE_ENV=production node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "exec-buffer": "^3.2.0",
+    "execa": "^7.1.1",
     "exiftool-vendored": "^21.5.1",
     "express": "^4.18.2",
     "fs-extra": "^11.1.1",
@@ -17,7 +22,11 @@
     "imagemin-jpeg-recompress": "^7.1.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
+    "is-jpg": "^3.0.0",
+    "is-png": "^3.0.1",
+    "is-stream": "^3.0.0",
     "lodash": "^4.17.21",
+    "ow": "^1.1.1",
     "sharp": "^0.32.0"
   }
 }

@@ -1,11 +1,8 @@
-import path from 'path';
-import { exec } from 'child_process';
+import path from 'node:path';
 import fse from 'fs-extra';
-import sharp from 'sharp';
 import imagemin from 'imagemin';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminJpegRecompress from 'imagemin-jpeg-recompress';
+import imageminPngquant from './plugins/imagemin-jpeg-recompress/index.js';
+import imageminJpegRecompress from './plugins/imagemin-pngquant/index.js';
 import { exiftool } from 'exiftool-vendored';
 
 const COMPRESS_TEMP = path.join(process.cwd(), 'temp');
@@ -23,7 +20,6 @@ export async function compressImage(image) {
       glob: false,
       destination: path.dirname(tempFile),
       plugins: [
-        // imageminMozjpeg(),
         imageminJpegRecompress({ strip: false }),
         imageminPngquant(),
       ]

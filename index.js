@@ -17,8 +17,9 @@ import {
 const app = express();
 const port = 3000;
 
-const DIRECTORY_PATH = path.resolve('/photo'); // 指定目录路径
+// const DIRECTORY_PATH = path.resolve('/photo'); // 指定目录路径
 // const DIRECTORY_PATH = path.resolve('C:/Users/Maibenben/Desktop/image-demo'); // 指定目录路径
+const DIRECTORY_PATH = path.resolve('C:/Users/Maibenben/Desktop/秋日公园_0'); // 指定目录路径
 
 const THUMBNAIL_TEMPDIR = path.resolve(process.cwd(), './public/thumb'); // 指定临时缩略图目录
 

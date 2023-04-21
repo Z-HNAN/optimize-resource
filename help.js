@@ -1,5 +1,4 @@
-import path from 'path'
-import fs from 'fs'
+import path from 'node:path'
 import fse from 'fs-extra'
 import sharp from 'sharp'
 import lodash from 'lodash'
@@ -39,12 +38,12 @@ export function generateThumbnail(srcPath, destPath) {
   const filename = path.basename(srcPath);
   const thumbnailPath = path.join(THUMBNAIL_TEMPDIR, filename);
 
-  if (fs.existsSync(destPath)) {
+  if (fse.existsSync(destPath)) {
     return Promise.resolve(destPath)
   }
 
   const destParentPath = path.dirname(destPath);
-  if (!fs.existsSync(destParentPath)) {
+  if (!fse.existsSync(destParentPath)) {
     fse.mkdirpSync(destParentPath)
   }
 
@@ -63,7 +62,7 @@ export function generateThumbnail(srcPath, destPath) {
 // 获取目录下的图片和目录
 export function getImageAndDirectory(dirPath) {
   // 读取目录下的所有文件和子目录
-  const files = fs.readdirSync(dirPath);
+  const files = fse.readdirSync(dirPath);
 
   const images = [];
   const directories = [];
@@ -91,7 +90,7 @@ export function getImageAndDirectory(dirPath) {
 export function getOptimizeSourceMeta(dirPath) {
   // 读取固定文件 
   const file = path.resolve(dirPath, OPTIMIZE_SOURCE_META_FILE);
-  if (fs.existsSync(file)) {
+  if (fse.existsSync(file)) {
     const jsonStr = fse.readFileSync(file, { encoding: 'utf-8' });
     return safeJSONParse(jsonStr);
   }
@@ -103,7 +102,7 @@ export function appendOptimizeSourceMeta(dirPath, meta) {
   const file = path.resolve(dirPath, OPTIMIZE_SOURCE_META_FILE);
 
   let rawMeta = {};
-  if (fs.existsSync(file)) {
+  if (fse.existsSync(file)) {
     rawMeta = safeJSONParse(fse.readFileSync(file, { encoding: 'utf-8' }));
   }
 
