@@ -15,7 +15,7 @@ VOLUME /photo
 # 复制项目文件到工作目录
 COPY . .
 
-RUN \
+RUN echo "zhnan/optimize-resource" \
   && chmod +751 vendor/linux-amd/jpeg-recompress \
   && chmod +751 vendor/linux-amd/pngquant \
   && chmod +751 vendor/linux-arm/jpeg-recompress \
