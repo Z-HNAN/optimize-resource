@@ -20,5 +20,5 @@ use WebUI
 ## use in docker (Recommend)
 
 ```bash
-docker run -d -p 3000:3000 -v /photo:/path/your/photo zhnan/optimize-resource
+docker run -d -p 3000:3000 -v /path/your/photo:/photo zhnan/optimize-resource
 ```

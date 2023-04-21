@@ -30,6 +30,6 @@ RUN echo "zhnan/optimize-resource" && \
 # 暴露端口
 EXPOSE 3000
 
-CMD ["npm", "build"]
+CMD ["npm", "run", "serve"]
 
 
