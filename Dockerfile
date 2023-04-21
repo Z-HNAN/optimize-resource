@@ -19,7 +19,7 @@ RUN echo "zhnan/optimize-resource" \
   && chmod +751 vendor/linux-amd/jpeg-recompress \
   && chmod +751 vendor/linux-amd/pngquant \
   && chmod +751 vendor/linux-arm/jpeg-recompress \
-  && chmod +751 vendor/linux-arm/pngquant \
+  && chmod +751 vendor/linux-arm/pngquant
 
   npm install
 
