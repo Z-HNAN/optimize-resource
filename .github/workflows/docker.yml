@@ -29,8 +29,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/arm64
-          push: false
+          platforms: linux/amd64,linux/arm64
+          push: true
           tags: |
             zhnan/optimize-resource:latest
             zhnan/optimize-resource:${{ github.sha }}
