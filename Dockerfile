@@ -16,6 +16,10 @@ VOLUME /photo
 COPY . .
 
 RUN echo "zhnan/optimize-resource" \
+  # apt-get
+  && apt-get update \
+  && apt-get install -y pngquant \
+
   # chmod
   && chmod +751 vendor/linux-amd/jpeg-recompress \
   && chmod +751 vendor/linux-amd/pngquant \
