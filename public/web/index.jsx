@@ -273,7 +273,7 @@ const App = () => {
           curDone={taskLog.successTasks.length + taskLog.failureTasks.length}
         />
 
-        {data.directories.map(d => (<OutputDirectory dir={d} onClick={() => setDir(`${dir}${d}`)} />))}
+        {data.directories.map(d => (<OutputDirectory dir={d} onClick={() => setDir(`${dir}${dir.endsWith('/') ? d : `/${d}`}`)} />))}
 
         {data.images.map(image => (<OutputImage key={image.path} {...image} task={taskMap[image.path] || {}} onTaskChange={handleImageTaskChange} />))}
       </section>
