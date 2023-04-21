@@ -25,7 +25,7 @@ const THUMBNAIL_TEMPDIR = path.resolve(process.cwd(), './public/thumb'); // 指�
 app.use(express.json())
 
 // 返回指定的图片
-app.get('/apis/resource/:dir', async (req, res) => {
+app.get('/apis/resource/:dir?', async (req, res) => {
   // 获取请求参数中的目录名
   const dir = decodeURIComponent(req.params.dir || '.');
 
