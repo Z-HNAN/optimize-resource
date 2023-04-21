@@ -2,9 +2,7 @@
 FROM node:16-buster-slim
 # FROM node:16-alpine
 
-# use /bin/bash avoid issue
-# https://github.com/imagemin/gifsicle-bin/issues/124
-# RUN ln -fs /bin/bash /bin/sh
+ENV LANG=en_US.UTF-8
 
 # 创建一个工作目录
 WORKDIR /app
