@@ -15,8 +15,13 @@ VOLUME /photo
 # 复制项目文件到工作目录
 COPY . .
 
-# 安装
-RUN npm install
+RUN \
+  && chmod +751 vendor/linux-amd/jpeg-recompress \
+  && chmod +751 vendor/linux-amd/pngquant \
+  && chmod +751 vendor/linux-arm/jpeg-recompress \
+  && chmod +751 vendor/linux-arm/pngquant \
+
+  npm install
 
 # 暴露端口
 EXPOSE 3000
