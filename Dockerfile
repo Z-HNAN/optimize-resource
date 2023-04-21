@@ -18,7 +18,7 @@ COPY . .
 RUN echo "zhnan/optimize-resource" && \
   # lib dep
   apt-get update && \
-  apt-get install -y libpng-dev && \
+  apt-get install -y libpng16-16 && \
   # chmod
   chmod +751 vendor/linux-amd/jpeg-recompress && \
   chmod +751 vendor/linux-amd/pngquant && \
