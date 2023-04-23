@@ -44,7 +44,8 @@ app.get('/apis/resource/*', async (req, res) => {
   const thumbs = await Promise.all(images.map(image => generateThumbnail(path.join(dirPath, image.path), path.join(THUMBNAIL_TEMPDIR, dir, image.path ))));
 
   res.json({
-    dir, directories,
+    dir,
+    directories,
     images: images.map((image, idx) => ({
       name: image.path,
       path: path.join(dirPath, image.path),

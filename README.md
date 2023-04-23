@@ -2,7 +2,7 @@ optimize-resource
 
 use nodejs to optimize resource with WebUI
 
-- support optimize jpeg/png
+- support compress jpeg/png
 
 ## use in local
 
